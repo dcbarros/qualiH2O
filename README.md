@@ -35,8 +35,6 @@
 
 1. **Copie as variáveis de ambiente**:
    ```bash
-   cp infra/.env.example infra/.env
-   # ou
    cp qualiH2OInfra/.env.example qualiH2OInfra/.env
    ```
 2. **Suba os serviços**:
@@ -50,7 +48,7 @@
    - Site : `http://localhost:8080` 
    - Login: 01234567
    - Senha: Senha1234
-   
+
 ## 5) Fluxos principais
 - **Login** → recebe **JWT** → front armazena token e envia em `Authorization: Bearer`.
 - **Dashboard** → cards + gráficos (Recharts) com métricas agregadas.
