@@ -48,7 +48,9 @@
    ```
 3. **Acesse**:
    - Site : `http://localhost:8080` 
-
+   - Login: 01234567
+   - Senha: Senha1234
+   
 ## 5) Fluxos principais
 - **Login** → recebe **JWT** → front armazena token e envia em `Authorization: Bearer`.
 - **Dashboard** → cards + gráficos (Recharts) com métricas agregadas.
