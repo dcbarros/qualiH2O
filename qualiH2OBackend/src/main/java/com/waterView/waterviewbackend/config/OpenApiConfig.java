@@ -19,9 +19,9 @@ public class OpenApiConfig {
     OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("API de Controle de Aulas")
+                        .title("API de Controle de Análises de Água")
                         .version("v1")
-                        .description("Documentação da API para gerenciamento de aulas, alunos e professores.")
+                        .description("Documentação da API para gerenciamento de análises de água.")
                         .license(new License()
                                 .name("MIT")
                                 .url("https://opensource.org/licenses/MIT")))

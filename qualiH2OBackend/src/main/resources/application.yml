@@ -19,8 +19,14 @@ springdoc:
   pathsToMatch:
     - /auth/**
     - /api/v1/**
+  api-docs:
+    path: /v3/api-docs
   swagger-ui:
     use-root-path: true
+    disable-swagger-default-url: true
+    url: /api/v3/api-docs
+    config-url: /api/v3/api-docs/swagger-config
+    oauth2-redirect-url: /api/swagger-ui/oauth2-redirect.html
 
 security:
   jwt:
@@ -38,4 +44,4 @@ server:
     context-path: /
 
 cors:
-  originPatterns: "http://localhost:5173,http://localhost:8080"
+  originPatterns: "http://localhost:5173,http://localhost:8080,http://localhost"
