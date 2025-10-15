@@ -51,9 +51,8 @@ export function NewAnaliseButton() {
       toast.error(await extractAxiosErrorMessage(err));
     },
   });
-
-  const onSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  
+  const onSubmit = async () => {
 
     if (form.ph < 0 || form.ph > 14) return toast.error("pH deve estar entre 0 e 14.");
     if (form.turbidez < 0) return toast.error("Turbidez deve ser positiva.");
