@@ -24,9 +24,9 @@ export function NewAnaliseButton() {
     analista: "",
     local: "",
     descricao: "",
-    ph: 7,
-    turbidez: 0,
-    condutancia: 300,
+    ph: 7.00,
+    turbidez: 0.00,
+    condutancia: 300.00,
     horaDaAmostragem: defaultDatetime,
   });
 
@@ -39,7 +39,7 @@ export function NewAnaliseButton() {
         ph: form.ph,
         turbidez: form.turbidez,
         condutancia: form.condutancia,
-        horaDaAmostragem: new Date(form.horaDaAmostragem).toISOString(),
+        horaDaAmostragem: new Date(form.horaDaAmostragem + "Z").toISOString(),
       }),
     onSuccess: () => {
       toast.success("Análise criada com sucesso.");
@@ -59,7 +59,6 @@ export function NewAnaliseButton() {
     if (form.turbidez < 0) return toast.error("Turbidez deve ser positiva.");
     if (form.condutancia < 0) return toast.error("Condutância deve ser positiva.");
     if (!form.analista?.trim() || !form.local?.trim()) return toast.error("Analista e Local são obrigatórios.");
-
     await doCreate();
   };
 
@@ -73,7 +72,7 @@ export function NewAnaliseButton() {
       >
         <div className="flex items-center">
           <Plus className="h-3.5 w-3.5 me-2" />
-          <p>Novos Campos</p>
+          <p>Nova Análise</p>
         </div>
       </button>
 
@@ -220,8 +219,7 @@ function Dialog({
   );
 }
 
-function toLocalDatetimeNow() {
-  const d = new Date();
+function toLocalDatetimeNow(d: Date = new Date()) {
   const pad = (n: number) => n.toString().padStart(2, "0");
   return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
 }

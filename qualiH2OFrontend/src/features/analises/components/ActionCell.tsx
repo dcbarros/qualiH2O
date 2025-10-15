@@ -89,7 +89,7 @@ export function ActionsCell({ a }: { a: AnaliseDTO }) {
         ph: payload.ph,
         turbidez: payload.turbidez,
         condutancia: payload.condutancia,
-        horaDaAmostragem: new Date(payload.horaDaAmostragem).toISOString(),
+        horaDaAmostragem: new Date(payload.horaDaAmostragem + "Z").toISOString(),
       }),
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ["analises"] });
